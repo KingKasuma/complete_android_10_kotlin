@@ -1,5 +1,6 @@
 package com.example.colorweather
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -110,4 +111,19 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.clear_day
         }
     }
+
+    fun startDailyActivity(view: View){
+        //Crear un intent que intente ir a daily activity
+        val intent = Intent(this, DailyActivity::class.java)
+        //Ir a la daily activity
+        startActivity(intent)
+    }
+
+    fun startHourlyActivity(view: View){
+        //Crear un intent que intente ir a hourly activity
+        val intent = Intent(this, HourlyActivity::class.java)
+        //Ir a la hourly activity
+        startActivity(intent)
+    }
+
 }
