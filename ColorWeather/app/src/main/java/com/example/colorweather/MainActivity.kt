@@ -9,6 +9,7 @@ import com.example.colorweather.data.model.Currently
 import com.example.colorweather.data.model.Weather
 import com.example.colorweather.data.net.DarkSkyClient
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.design.indefiniteSnackbar
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -70,7 +71,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayErrorMessage(){
-        Toast.makeText(this, "Network Error. Try again later", Toast.LENGTH_LONG).show()
+        mainLayout.indefiniteSnackbar("Network Error. Try Again?", "OK"){
+            getWeather() //llama a esta funcion cuando se presiona el boton OK
+        }
+        //Toast.makeText(this, "Network Error. Try again later", Toast.LENGTH_LONG).show()
     }
 
     private fun setUpWidgets(currently: Currently?){
