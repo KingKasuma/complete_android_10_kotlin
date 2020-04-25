@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6bcadf97-7f61-4193-a02c-85e935f4bb6d" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZUPXY8U0z3GU1Z0Oa0GkWeddV7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../../Xanthops/Java/moztaza-api" />
+  </component>
+  <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="CuartaParteKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="CursoAndroid" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="CuartaParteKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="CursoAndroid" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="class.MainKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="QuintaParteKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="CursoAndroid" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="QuintaParteKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SegundaParteKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="CursoAndroid" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="SegundaParteKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TerceraParteKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="CursoAndroid" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" value="TerceraParteKt" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.QuintaParteKt" />
+        <item itemvalue="Kotlin.CuartaParteKt" />
+        <item itemvalue="Kotlin.TerceraParteKt" />
+        <item itemvalue="Kotlin.SegundaParteKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bcadf97-7f61-4193-a02c-85e935f4bb6d" name="Default Changelist" comment="" />
+      <created>1584890739721</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584890739721</updated>
+      <workItem from="1584890743690" duration="5230000" />
+      <workItem from="1584974401538" duration="783000" />
+      <workItem from="1584983978745" duration="1633000" />
+      <workItem from="1585064408630" duration="32000" />
+      <workItem from="1585143669049" duration="706000" />
+      <workItem from="1585272900087" duration="3506000" />
+      <workItem from="1585346495441" duration="2132000" />
+      <workItem from="1585412331478" duration="1748000" />
+      <workItem from="1585492177200" duration="14946000" />
+      <workItem from="1585574488222" duration="4077000" />
+      <workItem from="1585672071140" duration="8045000" />
+      <workItem from="1586184552877" duration="18000" />
+      <workItem from="1586655028688" duration="4467000" />
+      <workItem from="1586869858436" duration="54000" />
+      <workItem from="1587082366624" duration="1492000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2078" y="14" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1585537336547">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2078" y="14" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585537336547" />
+    <state x="2109" y="298" width="424" height="491" key="FileChooserDialogImpl" timestamp="1584964241788">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2109" y="298" width="424" height="491" key="FileChooserDialogImpl/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1584964241788" />
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom" timestamp="1585695131802">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.bottom/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585695131802" />
+    <state width="1874" height="260" key="GridCell.Tab.0.center" timestamp="1585695131802">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.center/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585695131802" />
+    <state width="1874" height="260" key="GridCell.Tab.0.left" timestamp="1585695131802">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.left/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585695131802" />
+    <state width="1874" height="260" key="GridCell.Tab.0.right" timestamp="1585695131802">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="260" key="GridCell.Tab.0.right/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1585695131802" />
+    <state x="1986" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1586869857222">
+      <screen x="1366" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1986" y="367" key="com.intellij.ide.util.TipDialog/0.27.1366.741/1366.0.1920.1080@1366.0.1920.1080" timestamp="1586869857222" />
+  </component>
+</project>
