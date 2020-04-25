@@ -3,6 +3,7 @@ package com.example.colorweather
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.example.colorweather.data.model.Currently
 import com.example.colorweather.data.model.Weather
@@ -16,9 +17,9 @@ import java.util.*
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
-    //Desplegar una barra de progreso mientras se carga nuestra informacion
+
     //Manejar los errores de forma mas adecuada
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -26,10 +27,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getWeather(){
+        //Desplegar nuestra progress bar
+        displayProgressBar(true)
+        displayUI(false)
+        //Queremos que nuestros componentes sean invisibles
         //Realizando un peticion a Dark Sky para saber el clima
         DarkSkyClient.getWeather().enqueue(object : Callback<Weather>{
             override fun onFailure(call: Call<Weather>, t: Throwable) {
                 Log.d("MainActivity", "Error")
+                //Oculte nuestra progress bar
+                displayProgressBar(false)
                 //Llamar a una funcion que despliegue mensaje de error
                 displayErrorMessage()
             }
@@ -38,10 +45,28 @@ class MainActivity : AppCompatActivity() {
                 Log.d("BODY", "${response.body()}")
                 Log.d("MainActivity", "${response.body()?.currently?.summary}")
                 Log.d("Icon", "${response.body()?.currently?.icon}")
+                //Ocultar nuestra progress bar
+                displayProgressBar(false)
+                displayUI(true)
+                //Desplegar nuestra UI
                 setUpWidgets(response.body()?.currently)
             }
 
         })
+    }
+
+    private fun displayUI(visible: Boolean){
+        datetextView.visibility = if(visible) View.VISIBLE else View.GONE
+        iconImageView.visibility = if(visible) View.VISIBLE else View.GONE
+        descriptionTextView.visibility = if(visible) View.VISIBLE else View.GONE
+        minTempTextView.visibility = if(visible) View.VISIBLE else View.GONE
+        precipProbTextView.visibility = if(visible) View.VISIBLE else View.GONE
+        dailyButton.visibility = if(visible) View.VISIBLE else View.GONE
+        hourlyButton.visibility = if(visible) View.VISIBLE else View.GONE
+    }
+
+    private fun displayProgressBar(visible: Boolean){
+        progressBar.visibility = if (visible) View.VISIBLE else View.GONE
     }
 
     private fun displayErrorMessage(){
