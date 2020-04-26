@@ -21,6 +21,10 @@ import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
+    companion object{
+        const val HOURLY_SUMMARY = "HOURLY_SUMMARY"
+    }
+
     var hourlySummary: List<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,23 +82,24 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayErrorMessage(){
-        mainLayout.indefiniteSnackbar("Network Error. Try Again?", "OK"){
+        mainLayout.indefiniteSnackbar(getString(R.string.network_error), getString(R.string.ok)){
             getWeather() //llama a esta funcion cuando se presiona el boton OK
         }
         //Toast.makeText(this, "Network Error. Try again later", Toast.LENGTH_LONG).show()
     }
 
     private fun setUpWidgets(currently: Currently?){
-        descriptionTextView.text = currently?.summary ?: "No Data"
+        descriptionTextView.text = currently?.summary ?: getString(R.string.no_data)
         minTempTextView.text = "${currently?.temperature?.roundToInt()}F"
         precipProbTextView.text = "${currently?.precipProbability?.roundToInt()}%"
         iconImageView.setImageResource(getWeatherIcon(currently?.icon ?: "clear_day"))
-        datetextView.text = getDateTime()?.capitalize() ?: "No Data"
+        datetextView.text = getDateTime()?.capitalize() ?: getString(R.string.no_data)
     }
 
     private fun getDateTime():String?{
         return try{
-            val simpleDateFormat = SimpleDateFormat("MMMM d", Locale.getDefault())
+            val format = "MMMM d"
+            val simpleDateFormat = SimpleDateFormat(format, Locale.getDefault())
             val date = Calendar.getInstance().time
             simpleDateFormat.format(date)
         }catch (e: Exception){
@@ -129,7 +134,7 @@ class MainActivity : AppCompatActivity() {
         //Crear un intent que intente ir a hourly activity
         val intent = Intent(this, HourlyActivity::class.java)
         val array = hourlySummary?.toTypedArray()
-        intent.putExtra("HOURLY_SUMMARY", array) //Pasando informacion en el intent en forma de extra
+        intent.putExtra(HOURLY_SUMMARY, array) //Pasando informacion en el intent en forma de extra
         //Ir a la hourly activity
         startActivity(intent)
     }
