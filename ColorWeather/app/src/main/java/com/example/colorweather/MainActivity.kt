@@ -3,6 +3,7 @@ package com.example.colorweather
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -20,7 +21,7 @@ import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
-    //Manejar los errores de forma mas adecuada
+    var hourlySummary: List<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,8 +51,13 @@ class MainActivity : AppCompatActivity() {
                 //Ocultar nuestra progress bar
                 displayProgressBar(false)
                 displayUI(true)
-                //Desplegar nuestra UI
-                setUpWidgets(response.body()?.currently)
+                if(response.isSuccessful){
+                    hourlySummary = response.body()?.hourly?.data?.map { "${convertTime(it.time, "MMMM dd, hh:mm")} ${it.summary}" }
+                    //Desplegar nuestra UI
+                    setUpWidgets(response.body()?.currently)
+                }else{
+                    displayErrorMessage()
+                }
             }
 
         })
@@ -122,8 +128,17 @@ class MainActivity : AppCompatActivity() {
     fun startHourlyActivity(view: View){
         //Crear un intent que intente ir a hourly activity
         val intent = Intent(this, HourlyActivity::class.java)
+        val array = hourlySummary?.toTypedArray()
+        intent.putExtra("HOURLY_SUMMARY", array) //Pasando informacion en el intent en forma de extra
         //Ir a la hourly activity
         startActivity(intent)
+    }
+
+    fun convertTime(time: Int, format: String):String{
+        val cal = Calendar.getInstance(Locale.getDefault())
+        cal.timeInMillis = (time * 1000L)
+        val date = DateFormat.format(format, cal).toString().capitalize()
+        return date
     }
 
 }
