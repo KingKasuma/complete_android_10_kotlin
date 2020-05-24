@@ -90,8 +90,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun setUpWidgets(currently: Currently?){
         descriptionTextView.text = currently?.summary ?: getString(R.string.no_data)
-        minTempTextView.text = "${currently?.temperature?.roundToInt()}F"
-        precipProbTextView.text = "${currently?.precipProbability?.roundToInt()}%"
+        minTempTextView.text = getString(R.string.temp, currently?.temperature?.roundToInt())
+        precipProbTextView.text = getString(R.string.precip_prob, currently?.precipProbability?.roundToInt())
         iconImageView.setImageResource(getWeatherIcon(currently?.icon ?: "clear_day"))
         datetextView.text = getDateTime()?.capitalize() ?: getString(R.string.no_data)
     }
