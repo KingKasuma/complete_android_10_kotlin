@@ -1,15 +1,18 @@
-package com.example.colorweather
+package com.example.colorweather.ui.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import android.text.format.DateFormat
 import android.util.Log
 import android.view.View
-import android.widget.Toast
+import com.example.colorweather.R
 import com.example.colorweather.data.model.Currently
+import com.example.colorweather.data.model.Data
 import com.example.colorweather.data.model.Weather
 import com.example.colorweather.data.net.DarkSkyClient
+import com.example.colorweather.ui.convertTime
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.design.indefiniteSnackbar
 import retrofit2.Call
@@ -17,15 +20,18 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
 
 class MainActivity : AppCompatActivity() {
 
     companion object{
         const val HOURLY_SUMMARY = "HOURLY_SUMMARY"
+        const val DAILY_DATA = "DAILY_DATA"
     }
 
     var hourlySummary: List<String>? = null
+    var dailyData: List<Data>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +43,7 @@ class MainActivity : AppCompatActivity() {
         //Desplegar nuestra progress bar
         displayProgressBar(true)
         displayUI(false)
+        val lang = getString(R.string.lan)
         //Queremos que nuestros componentes sean invisibles
         //Realizando un peticion a Dark Sky para saber el clima
         DarkSkyClient.getWeather().enqueue(object : Callback<Weather>{
@@ -59,6 +66,8 @@ class MainActivity : AppCompatActivity() {
                     hourlySummary = response.body()?.hourly?.data?.map { "${convertTime(it.time, "MMMM dd, hh:mm")} ${it.summary}" }
                     //Desplegar nuestra UI
                     setUpWidgets(response.body()?.currently)
+
+                    dailyData = response.body()?.daily?.data
                 }else{
                     displayErrorMessage()
                 }
@@ -82,7 +91,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun displayErrorMessage(){
-        mainLayout.indefiniteSnackbar(getString(R.string.network_error), getString(R.string.ok)){
+        mainLayout.indefiniteSnackbar(getString(R.string.network_error), getString(
+            R.string.ok
+        )){
             getWeather() //llama a esta funcion cuando se presiona el boton OK
         }
         //Toast.makeText(this, "Network Error. Try again later", Toast.LENGTH_LONG).show()
@@ -126,6 +137,8 @@ class MainActivity : AppCompatActivity() {
     fun startDailyActivity(view: View){
         //Crear un intent que intente ir a daily activity
         val intent = Intent(this, DailyActivity::class.java)
+        val array = dailyData as? ArrayList<Parcelable>
+        intent.putParcelableArrayListExtra(DAILY_DATA, array)
         //Ir a la daily activity
         startActivity(intent)
     }
@@ -139,11 +152,6 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun convertTime(time: Int, format: String):String{
-        val cal = Calendar.getInstance(Locale.getDefault())
-        cal.timeInMillis = (time * 1000L)
-        val date = DateFormat.format(format, cal).toString().capitalize()
-        return date
-    }
+
 
 }

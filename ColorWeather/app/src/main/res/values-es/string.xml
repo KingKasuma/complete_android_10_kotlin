@@ -1,12 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Color Weather</string>
-    <string name="dayli">Dayli</string>
-    <string name="hourly">hourly</string>
+    <string name="dayli">DIA</string>
+    <string name="hourly">HORA</string>
     <string name="weather_image">Weather Image</string>
     <string name="no_data">No Data</string>
     <string name="network_error">Network Error. Try Again?</string>
     <string name="ok">OK</string>
     <string name="temp">%1$dF</string>
     <string name="precip_prob">%1$d%%</string>
-    <string name="lan">en</string>
+    <string name="lan">es</string>
 </resources>

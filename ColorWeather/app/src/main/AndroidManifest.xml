@@ -11,9 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HourlyActivity"></activity>
-        <activity android:name=".DailyActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activities.HourlyActivity"></activity>
+        <activity android:name=".ui.activities.DailyActivity" />
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
